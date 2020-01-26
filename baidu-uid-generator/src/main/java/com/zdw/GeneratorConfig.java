@@ -1,7 +1,6 @@
 package com.zdw;
 
 import com.zdw.impl.CachedUidGenerator;
-import com.zdw.impl.DefaultUidGenerator;
 import com.zdw.worker.DisposableWorkerIdAssigner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -19,11 +19,8 @@ import com.zdw.utils.DockerUtils;
 import com.zdw.utils.NetUtils;
 import com.zdw.worker.entity.WorkerNodeEntity;
 import com.zdw.worker.mapper.WorkNodeMapper;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.math.RandomUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;

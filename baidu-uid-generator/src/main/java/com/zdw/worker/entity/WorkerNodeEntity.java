@@ -16,7 +16,6 @@
 package com.zdw.worker.entity;
 
 import com.zdw.worker.WorkerNodeType;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
