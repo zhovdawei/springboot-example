@@ -15,17 +15,17 @@
  */
 package com.zdw.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * DockerUtils
  * 
  * @author yutianbao
  */
+@Slf4j
 public abstract class DockerUtils {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DockerUtils.class);
+    /*private static final Logger LOGGER = LoggerFactory.getLogger(DockerUtils.class);*/
 
     /** Environment param keys */
     private static final String ENV_KEY_HOST = "JPAAS_HOST";
@@ -95,7 +95,7 @@ public abstract class DockerUtils {
             IS_DOCKER = false;
 
         } else {
-            LOGGER.error("Missing host or port from env for Docker. host:{}, port:{}", DOCKER_HOST, DOCKER_PORT);
+            log.error("Missing host or port from env for Docker. host:{}, port:{}", DOCKER_HOST, DOCKER_PORT);
             throw new RuntimeException(
                     "Missing host or port from env for Docker. host:" + DOCKER_HOST + ", port:" + DOCKER_PORT);
         }

@@ -22,8 +22,7 @@ import com.zdw.buffer.RejectedPutBufferHandler;
 import com.zdw.buffer.RejectedTakeBufferHandler;
 import com.zdw.buffer.RingBuffer;
 import com.zdw.exception.UidGenerateException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.util.Assert;
 
@@ -47,8 +46,9 @@ import java.util.List;
  * 
  * @author yutianbao
  */
+@Slf4j
 public class CachedUidGenerator extends DefaultUidGenerator implements DisposableBean {
-    private static final Logger LOGGER = LoggerFactory.getLogger(CachedUidGenerator.class);
+    /*private static final Logger LOGGER = LoggerFactory.getLogger(CachedUidGenerator.class);*/
     private static final int DEFAULT_BOOST_POWER = 3;
 
     /** Spring properties */
@@ -70,7 +70,7 @@ public class CachedUidGenerator extends DefaultUidGenerator implements Disposabl
         
         // initialize RingBuffer & RingBufferPaddingExecutor
         this.initRingBuffer();
-        LOGGER.info("Initialized RingBuffer successfully.");
+        log.info("Initialized RingBuffer successfully.");
     }
     
     @Override
@@ -78,7 +78,7 @@ public class CachedUidGenerator extends DefaultUidGenerator implements Disposabl
         try {
             return ringBuffer.take();
         } catch (Exception e) {
-            LOGGER.error("Generate unique id exception. ", e);
+            log.error("Generate unique id exception. ", e);
             throw new UidGenerateException(e);
         }
     }
@@ -120,7 +120,7 @@ public class CachedUidGenerator extends DefaultUidGenerator implements Disposabl
         // initialize RingBuffer
         int bufferSize = ((int) bitsAllocator.getMaxSequence() + 1) << boostPower;
         this.ringBuffer = new RingBuffer(bufferSize, paddingFactor);
-        LOGGER.info("Initialized ring buffer size:{}, paddingFactor:{}", bufferSize, paddingFactor);
+        log.info("Initialized ring buffer size:{}, paddingFactor:{}", bufferSize, paddingFactor);
 
         // initialize RingBufferPaddingExecutor
         boolean usingSchedule = (scheduleInterval != null);
@@ -128,8 +128,8 @@ public class CachedUidGenerator extends DefaultUidGenerator implements Disposabl
         if (usingSchedule) {
             bufferPaddingExecutor.setScheduleInterval(scheduleInterval);
         }
-        
-        LOGGER.info("Initialized BufferPaddingExecutor. Using schdule:{}, interval:{}", usingSchedule, scheduleInterval);
+
+        log.info("Initialized BufferPaddingExecutor. Using schdule:{}, interval:{}", usingSchedule, scheduleInterval);
         
         // set rejected put/take handle policy
         this.ringBuffer.setBufferPaddingExecutor(bufferPaddingExecutor);

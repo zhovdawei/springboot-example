@@ -15,10 +15,9 @@
  */
 package com.zdw.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.ClassUtils;
 import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.concurrent.ConcurrentHashMap;
@@ -31,8 +30,9 @@ import java.util.concurrent.atomic.AtomicLong;
  * 
  * @author yutianbao
  */
+@Slf4j
 public class NamingThreadFactory implements ThreadFactory {
-    private static final Logger LOGGER = LoggerFactory.getLogger(NamingThreadFactory.class);
+    /*private static final Logger LOGGER = LoggerFactory.getLogger(NamingThreadFactory.class);*/
 
     /**
      * Thread name pre
@@ -91,8 +91,9 @@ public class NamingThreadFactory implements ThreadFactory {
             thread.setUncaughtExceptionHandler(this.uncaughtExceptionHandler);
         } else {
             thread.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
+                @Override
                 public void uncaughtException(Thread t, Throwable e) {
-                    LOGGER.error("unhandled exception in thread: " + t.getId() + ":" + t.getName(), e);
+                    log.error("unhandled exception in thread: " + t.getId() + ":" + t.getName(), e);
                 }
             });
         }

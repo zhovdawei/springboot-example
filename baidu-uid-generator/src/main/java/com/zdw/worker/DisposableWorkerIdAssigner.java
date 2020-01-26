@@ -19,6 +19,8 @@ import com.zdw.utils.DockerUtils;
 import com.zdw.utils.NetUtils;
 import com.zdw.worker.entity.WorkerNodeEntity;
 import com.zdw.worker.mapper.WorkNodeMapper;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.math.RandomUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,8 +34,9 @@ import javax.annotation.Resource;
  * 
  * @author yutianbao
  */
+@Slf4j
 public class DisposableWorkerIdAssigner implements WorkerIdAssigner {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DisposableWorkerIdAssigner.class);
+    /*private static final Logger LOGGER = LoggerFactory.getLogger(DisposableWorkerIdAssigner.class);*/
 
     @Resource
     private WorkNodeMapper workerNodeMapper;
@@ -53,7 +56,7 @@ public class DisposableWorkerIdAssigner implements WorkerIdAssigner {
 
         // add worker node for new (ignore the same IP + PORT)
         workerNodeMapper.addWorkerNode(workerNodeEntity);
-        LOGGER.info("Add worker node:" + workerNodeEntity);
+        log.info("Add worker node:" + workerNodeEntity);
 
         return workerNodeEntity.getId();
     }

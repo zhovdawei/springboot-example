@@ -17,8 +17,7 @@ package com.zdw.buffer;
 
 import com.zdw.utils.NamingThreadFactory;
 import com.zdw.utils.PaddedAtomicLong;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.Assert;
 
 import java.util.List;
@@ -34,8 +33,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * 
  * @author yutianbao
  */
+@Slf4j
 public class BufferPaddingExecutor {
-    private static final Logger LOGGER = LoggerFactory.getLogger(RingBuffer.class);
 
     /** Constants */
     private static final String WORKER_NAME = "RingBuffer-Padding-Worker";
@@ -137,11 +136,12 @@ public class BufferPaddingExecutor {
      * Padding buffer fill the slots until to catch the cursor
      */
     public void paddingBuffer() {
-        LOGGER.info("Ready to padding buffer lastSecond:{}. {}", lastSecond.get(), ringBuffer);
+
+        log.info("Ready to padding buffer lastSecond:{}. {}", lastSecond.get(), ringBuffer);
 
         // is still running
         if (!running.compareAndSet(false, true)) {
-            LOGGER.info("Padding buffer is still running. {}", ringBuffer);
+            log.info("Padding buffer is still running. {}", ringBuffer);
             return;
         }
 
@@ -159,7 +159,7 @@ public class BufferPaddingExecutor {
 
         // not running now
         running.compareAndSet(true, false);
-        LOGGER.info("End to padding buffer lastSecond:{}. {}", lastSecond.get(), ringBuffer);
+        log.info("End to padding buffer lastSecond:{}. {}", lastSecond.get(), ringBuffer);
     }
 
     /**
