@@ -5,6 +5,8 @@ import com.zdw.worker.DisposableWorkerIdAssigner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalDate;
+
 @Configuration
 public class GeneratorConfig {
 
@@ -17,6 +19,7 @@ public class GeneratorConfig {
     public CachedUidGenerator getCachedUidGenerator(){
         CachedUidGenerator cug = new CachedUidGenerator();
         cug.setWorkerIdAssigner(disposableWorkerIdAssigner());
+        cug.setEpochStr(LocalDate.now().toString());
         return cug;
     }
 
@@ -27,7 +30,7 @@ public class GeneratorConfig {
         dug.setTimeBits(29);
         dug.setWorkerBits(21);
         dug.setSeqBits(13);
-        dug.setEpochStr("2020-01-01");
+        cug.setEpochStr(LocalDate.now().toString());
         return dug;
     }*/
 
