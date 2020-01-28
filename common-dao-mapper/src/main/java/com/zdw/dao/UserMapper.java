@@ -31,6 +31,8 @@ public interface UserMapper {
      */
     User selectByPrimaryKey(Long id);
 
+    User selectByVipNo(Long vipNo);
+
     List<User> selectAll();
 
     /**

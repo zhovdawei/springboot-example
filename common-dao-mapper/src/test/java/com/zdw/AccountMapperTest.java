@@ -2,19 +2,17 @@ package com.zdw;
 
 import com.zdw.dao.AccountMapper;
 import com.zdw.db.Account;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import static org.junit.Assert.assertEquals;
 
 @SpringBootTest
-class AccountMapperTests {
-
-    @Test
-    void contextLoads() {
-    }
+public class AccountMapperTest  extends AbstractTestNGSpringContextTests {
 
     @Autowired
     private AccountMapper accountMapper;
@@ -28,8 +26,9 @@ class AccountMapperTests {
         account.setGrade(4);
         account.setCreateTime(LocalDateTime.now());
         account.setUpdateTime(account.getCreateTime());
-        accountMapper.insert(account);
-        System.out.println(account.getCreateTime());
+        int flag = accountMapper.insert(account);
+        System.out.println("11111111111111111");
+        assertEquals(flag,1);
     }
 
 }

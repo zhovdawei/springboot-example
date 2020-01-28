@@ -2,16 +2,18 @@ package com.zdw;
 
 import com.zdw.dao.UserMapper;
 import com.zdw.db.User;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.Test;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
+import static org.junit.Assert.assertEquals;
 
 @SpringBootTest
-public class UserMapperTests {
+public class UserMapperTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
     private UserMapper userMapper;
@@ -29,18 +31,19 @@ public class UserMapperTests {
         user.setBirthday(LocalDate.parse("2000-07-12"));
         user.setCreateTime(LocalDateTime.now());
         user.setUpdateTime(user.getCreateTime());
-        userMapper.insert(user);
-        System.out.println(user.getCreateTime());
-        System.out.println(user.getUpdateTime());
+        int flag = userMapper.insert(user);
+
+        System.out.println("2222222222222222");
+        assertEquals(flag,1);
     }
 
     @Test
-    public void userSelectTest(){
-        User user = userMapper.selectByPrimaryKey(7L);
-        System.out.println(user);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-        System.out.println(dtf.format(user.getCreateTime()));
-        System.out.println(user.getUpdateTime());
+    public void selectByVipNoTest(){
+
+        System.out.println("3333333333333333");
+        User user = userMapper.selectByVipNo(2360032989544458L);
+        System.out.println("user -> "+user);
+        assertEquals(user.getId(),Long.valueOf(2360032989544458L));
     }
 
 }

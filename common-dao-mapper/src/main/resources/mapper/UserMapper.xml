@@ -56,4 +56,10 @@
     update_time
     from user
   </select>
+  <select id="selectByVipNo" resultType="com.zdw.db.User">
+    select id, name, number, nickname, vip_no, email, phone, sex, birthday, create_time,
+    update_time
+    from user
+    where vip_no = #{vipNo,jdbcType=BIGINT}
+  </select>
 </mapper>

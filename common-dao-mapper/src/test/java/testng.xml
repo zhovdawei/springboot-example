@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="测试套件">
+    <test name="简单测试" preserve-order="true">
+        <classes>
+            <class name="com.zdw.UserMapperTest">
+                <methods>
+                    <include name="userInsertTest" />
+                    <include name="selectByVipNoTest" />
+                </methods>
+            </class>
+            <class name="com.zdw.AccountMapperTest">
+                <methods>
+                    <include name="accountInsertTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
