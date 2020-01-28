@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zdw.dao.AccountMapper">
+  <resultMap id="BaseResultMap" type="com.zdw.db.Account">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="vip_no" jdbcType="BIGINT" property="vipNo" />
+    <result column="balance" jdbcType="DECIMAL" property="balance" />
+    <result column="integral" jdbcType="INTEGER" property="integral" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from account
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zdw.db.Account">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into account (id, vip_no, balance, 
+      integral, grade, create_time, 
+      update_time)
+    values (#{id,jdbcType=BIGINT}, #{vipNo,jdbcType=BIGINT}, #{balance,jdbcType=DECIMAL}, 
+      #{integral,jdbcType=INTEGER}, #{grade,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.zdw.db.Account">
+    update account
+    set vip_no = #{vipNo,jdbcType=BIGINT},
+      balance = #{balance,jdbcType=DECIMAL},
+      integral = #{integral,jdbcType=INTEGER},
+      grade = #{grade,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, vip_no, balance, integral, grade, create_time, update_time
+    from account
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, vip_no, balance, integral, grade, create_time, update_time
+    from account
+  </select>
+</mapper>
