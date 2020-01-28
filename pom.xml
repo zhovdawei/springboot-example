@@ -120,13 +120,13 @@
             </dependency>
 
             <!-- mybatis-orm框架 -->
-            <dependency>
+<!--            <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-starter-version}</version>
-            </dependency>
+            </dependency>-->
 
-            <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+            <!-- mybatis-puls -->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>

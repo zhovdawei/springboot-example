@@ -1,17 +1,13 @@
 package com.zdw;
 
 import com.zdw.dao.AccountMapper;
-import com.zdw.dao.UserMapper;
 import com.zdw.db.Account;
-import com.zdw.db.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @SpringBootTest
 class AccountMapperTests {
