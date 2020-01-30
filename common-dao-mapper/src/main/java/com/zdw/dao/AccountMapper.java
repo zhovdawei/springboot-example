@@ -4,17 +4,14 @@ import com.zdw.db.Account;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 /**
 *
 * @author MBG
-* @created Create Time: Tue Jan 28 05:46:11 CST 2020
+* @created Create Time: Thu Jan 30 02:58:10 CST 2020
 */
-@Repository
 @Mapper
-public interface AccountMapper{
-
+@Repository
+public interface AccountMapper {
     /**
      * 根据主键删除数据
      * @param id
@@ -28,12 +25,22 @@ public interface AccountMapper{
     int insert(Account record);
 
     /**
+     * 插入数据库记录（建议使用）
+     * @param record
+     */
+    int insertSelective(Account record);
+
+    /**
      * 根据主键id查询
      * @param id
      */
     Account selectByPrimaryKey(Long id);
 
-    List<Account> selectAll();
+    /**
+     * 修改数据(推荐使用)
+     * @param record
+     */
+    int updateByPrimaryKeySelective(Account record);
 
     /**
      * 修改数据

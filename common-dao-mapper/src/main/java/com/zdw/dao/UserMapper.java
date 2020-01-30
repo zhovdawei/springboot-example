@@ -1,14 +1,13 @@
 package com.zdw.dao;
 
 import com.zdw.db.User;
-import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 /**
 *
 * @author MBG
-* @created Create Time: Tue Jan 28 20:44:44 CST 2020
+* @created Create Time: Thu Jan 30 02:58:10 CST 2020
 */
 @Mapper
 @Repository
@@ -26,14 +25,22 @@ public interface UserMapper {
     int insert(User record);
 
     /**
+     * 插入数据库记录（建议使用）
+     * @param record
+     */
+    int insertSelective(User record);
+
+    /**
      * 根据主键id查询
      * @param id
      */
     User selectByPrimaryKey(Long id);
 
-    User selectByVipNo(Long vipNo);
-
-    List<User> selectAll();
+    /**
+     * 修改数据(推荐使用)
+     * @param record
+     */
+    int updateByPrimaryKeySelective(User record);
 
     /**
      * 修改数据

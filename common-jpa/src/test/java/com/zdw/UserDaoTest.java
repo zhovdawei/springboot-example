@@ -1,7 +1,7 @@
 package com.zdw;
 
-import com.zdw.dao.UserMapper;
-import com.zdw.db.User;
+import com.zdw.dao.UserDao;
+import com.zdw.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -13,10 +13,10 @@ import java.time.LocalDateTime;
 import static org.junit.Assert.assertEquals;
 
 @SpringBootTest
-public class UserMapperTest extends AbstractTestNGSpringContextTests {
+public class UserDaoTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserDao userDao;
 
     @Test
     public void userInsertTest(){
@@ -31,19 +31,17 @@ public class UserMapperTest extends AbstractTestNGSpringContextTests {
         user.setBirthday(LocalDate.parse("2000-07-12"));
         user.setCreateTime(LocalDateTime.now());
         user.setUpdateTime(user.getCreateTime());
-        int flag = userMapper.insert(user);
-
-        System.out.println("2222222222222222");
-        assertEquals(flag,1);
+        User userObj = userDao.save(user);
+        assertEquals(userObj.getVipNo(),Long.valueOf(2360032989544458L));
     }
 
     @Test
     public void selectByVipNoTest(){
-
-        System.out.println("3333333333333333");
-        User user = userMapper.selectByPrimaryKey(2360032989544458L);
+        User user = userDao.findByVipNo(2360032989544458L);
         System.out.println("user -> "+user);
         assertEquals(user.getVipNo(),Long.valueOf(2360032989544458L));
     }
+
+
 
 }

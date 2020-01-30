@@ -1,18 +1,19 @@
 package com.zdw.db;
 
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import lombok.Data;
 
 /**
 *
 * @author MBG
-* @created Create Time: Tue Jan 28 05:46:11 CST 2020
+* @created Create Time: Thu Jan 30 02:58:10 CST 2020
 */
 @Data
 public class Account {
     /**
-     * 主键id
+     * 
      */
     private Long id;
 

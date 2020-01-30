@@ -52,8 +52,10 @@
                     <verbose>true</verbose>
                     <!-- 是否覆盖 -->
                     <overwrite>true</overwrite>
-                    <!-- 自动生成的配置 -->
-                    <configurationFile>src/main/resources/generator-configuration.xml</configurationFile>
+                    <!-- mybatis 自动生成 配置 -->
+                    <!--<configurationFile>src/main/resources/generator-configuration.xml</configurationFile>-->
+                    <!-- jpa 自动生成 配置 -->
+                    <configurationFile>src/main/resources/generator-jpa-config.xml</configurationFile>
                 </configuration>
             </plugin>
 

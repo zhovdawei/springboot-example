@@ -1,20 +1,26 @@
 package com.zdw.db;
 
+import lombok.Data;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import lombok.Data;
 
 /**
 *
 * @author MBG
-* @created Create Time: Tue Jan 28 20:44:44 CST 2020
+* @created Create Time: Thu Jan 30 02:58:10 CST 2020
 */
 @Data
 public class User {
     /**
-     * 主键id
+     * 
      */
     private Long id;
+
+    /**
+     * 会员编号
+     */
+    private Long vipNo;
 
     /**
      * 姓名
@@ -32,11 +38,6 @@ public class User {
     private String nickname;
 
     /**
-     * 会员编号
-     */
-    private Long vipNo;
-
-    /**
      * 邮箱绑定
      */
     private String email;
@@ -49,7 +50,7 @@ public class User {
     /**
      * 性别(0-男,1-女)
      */
-    private Boolean sex;
+    private Integer sex;
 
     /**
      * 生日
