@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="测试套件">
+    <test name="简单测试" preserve-order="true">
+        <classes>
+            <class name="com.zdw.UserDaoTest">
+                <methods>
+                    <include name="userInsertTest" />
+                    <include name="updateByIdTest" />
+                    <include name="selectByVipNoTest" />
+                    <include name="deleteByVipNoTest" />
+                    <include name="validateDeleteTest" />
+                </methods>
+            </class>
+            <class name="com.zdw.AccountDaoTest">
+                <methods>
+                    <include name="accountInsertTest" />
+                    <include name="updateBalanceByVipNoTest" />
+                    <include name="accountSelectByVipNoTest" />
+                    <include name="accountDeleteByVipNoTest" />
+                    <include name="accountDeleteValidateTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

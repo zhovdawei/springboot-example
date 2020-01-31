@@ -4,6 +4,8 @@ import com.zdw.dto.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
+
 /**
 *
 * @author MBG
@@ -14,4 +16,6 @@ public interface UserDao extends JpaRepository<User, Long> {
 
     User findByVipNo(long vipNo);
 
+    @Transactional
+    int deleteByVipNo(long vipNo);
 }

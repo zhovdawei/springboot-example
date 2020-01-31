@@ -36,12 +36,31 @@ public class UserDaoTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test
+    public void updateByIdTest(){
+        User user = userDao.findByVipNo(2360032989544458L);
+        user.setName("周大伟");
+        user.setBirthday(LocalDate.parse("1991-06-07"));
+        user = userDao.saveAndFlush(user);
+        System.out.println(user);
+        assertEquals(user.getName(),"周大伟");
+    }
+
+    @Test
     public void selectByVipNoTest(){
         User user = userDao.findByVipNo(2360032989544458L);
         System.out.println("user -> "+user);
-        assertEquals(user.getVipNo(),Long.valueOf(2360032989544458L));
+        assertEquals(user.getName(),"周大伟");
     }
 
+    @Test
+    public void deleteByVipNoTest(){
+        int flag = userDao.deleteByVipNo(2360032989544458L);
+        assertEquals(1,flag);
+    }
 
-
+    @Test
+    public void validateDeleteTest(){
+        User user = userDao.findByVipNo(2360032989544458L);
+        assertEquals(null,user);
+    }
 }

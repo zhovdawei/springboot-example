@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 import static org.junit.Assert.assertEquals;
 
 @SpringBootTest
-public class AccountMapperTest extends AbstractTestNGSpringContextTests {
+public class AccountDaoTest extends AbstractTestNGSpringContextTests {
 
     @Autowired
     private AccountDao accountDao;
@@ -28,7 +28,18 @@ public class AccountMapperTest extends AbstractTestNGSpringContextTests {
         account.setCreateTime(LocalDateTime.now());
         account.setUpdateTime(account.getCreateTime());
         Account accountEntity = accountDao.save(account);
+        System.out.println("新增对象 : "+accountEntity);
         assertEquals(accountEntity.getVipNo(),account.getVipNo());
+    }
+
+    @Test
+    public void updateBalanceByVipNoTest(){
+        Account entity = accountDao.findByVipNo(2360032989544451L);
+        entity.setBalance(new BigDecimal(100));
+        entity.setUpdateTime(LocalDateTime.now());
+        entity = accountDao.saveAndFlush(entity);
+        System.out.println(entity);
+        assertEquals(entity.getBalance(),new BigDecimal(100));
     }
 
     @Test
@@ -37,5 +48,23 @@ public class AccountMapperTest extends AbstractTestNGSpringContextTests {
         System.out.println(entity);
         assertEquals(entity.getVipNo(),Long.valueOf(2360032989544451L));
     }
+
+    @Test
+    public void accountDeleteByVipNoTest(){
+        int flag = accountDao.deleteByVipNo(2360032989544451L);
+        assertEquals(flag,1);
+    }
+
+    @Test
+    public void accountDeleteValidateTest(){
+        Account account = accountDao.findByVipNo(2360032989544451L);
+        assertEquals(null,account);
+    }
+
+
+
+
+
+
 
 }
