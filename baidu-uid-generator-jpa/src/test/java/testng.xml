@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="UID测试">
+    <test name="常规测试" preserve-order="true">
+        <classes>
+            <class name="com.zdw.UidGeneratorTest">
+                <methods>
+                    <include name="uidCreateTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

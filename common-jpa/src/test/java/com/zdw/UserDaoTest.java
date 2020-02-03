@@ -46,10 +46,16 @@ public class UserDaoTest extends AbstractTestNGSpringContextTests {
     }
 
     @Test
+    public void updateByVipNoTest(){
+        int index = userDao.updateNameByVipNo(2360032989544458L,"zhovdawei");
+        assertEquals(index,1);
+    }
+
+    @Test
     public void selectByVipNoTest(){
         User user = userDao.findByVipNo(2360032989544458L);
         System.out.println("user -> "+user);
-        assertEquals(user.getName(),"周大伟");
+        assertEquals(user.getName(),"zhovdawei");
     }
 
     @Test

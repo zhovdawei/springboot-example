@@ -2,6 +2,8 @@ package com.zdw.dao;
 
 import com.zdw.dto.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
@@ -18,4 +20,13 @@ public interface UserDao extends JpaRepository<User, Long> {
 
     @Transactional
     int deleteByVipNo(long vipNo);
+
+    /**
+     * 这里有个大坑，@Query里面的元素应该使用Entity里面的命名，然后由Entity自动去映射table
+     * */
+    @Transactional
+    @Modifying
+    @Query("UPDATE User SET name = ?2 WHERE vipNo = ?1")
+    int updateNameByVipNo(Long vipNo,String name);
+
 }

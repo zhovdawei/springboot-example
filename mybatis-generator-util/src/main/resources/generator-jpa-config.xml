@@ -57,7 +57,79 @@
                enableUpdateByExample="false">
             <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
         </table>-->
-        <table tableName="account" domainObjectName="Account" mapperName="AccountDao"
+        <!--<table tableName="account" domainObjectName="Account" mapperName="AccountDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>-->
+
+<!--        <table tableName="order_detail" domainObjectName="OrderDetail" mapperName="OrderDetailDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>
+        <table tableName="order_log" domainObjectName="OrderLog" mapperName="OrderLogDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>
+        <table tableName="out_bound_detail" domainObjectName="OutBoundDetail" mapperName="OutBoundDetailDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>
+        <table tableName="out_bound_order" domainObjectName="OutBoundOrder" mapperName="OutBoundOrderDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>
+        <table tableName="payment_detail" domainObjectName="PaymentDetail" mapperName="PaymentDetailDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>
+        <table tableName="product" domainObjectName="Product" mapperName="ProductDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>
+        <table tableName="refund_detail" domainObjectName="RefundDetail" mapperName="RefundDetailDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>
+        <table tableName="stock_manage" domainObjectName="SockManage" mapperName="SockManageDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>
+        <table tableName="vip_order" domainObjectName="VipOrder" mapperName="VipOrderDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>-->
+
+        <table tableName="worker_node" domainObjectName="WorkerNode" mapperName="WorkerNodeDao"
                enableCountByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
