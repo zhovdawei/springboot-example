@@ -71,7 +71,7 @@ public class User {
     private String phone;
 
     /**
-     * 性别(0-男,1-女)
+     * 性别(0-女,1-男)
      */
     @Basic
     @Column(name="sex")

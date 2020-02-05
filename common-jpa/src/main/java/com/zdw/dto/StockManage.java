@@ -18,7 +18,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="stock_manage")
-public class SockManage {
+public class StockManage {
     /**
      * 
      */

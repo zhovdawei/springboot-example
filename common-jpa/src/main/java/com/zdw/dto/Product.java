@@ -50,7 +50,7 @@ public class Product {
     private BigDecimal price;
 
     /**
-     * 类型(1-电子,2-生鲜,3-日用,4-零食,5-饮品,6-化妆品,7-衣服,8-鞋)
+     * 类型(1-电子,2-水果,3-日用,4-零食,5-饮品,6-化妆品,7-衣服,8-鞋,9-水产)
      */
     @Basic
     @Column(name="type")
