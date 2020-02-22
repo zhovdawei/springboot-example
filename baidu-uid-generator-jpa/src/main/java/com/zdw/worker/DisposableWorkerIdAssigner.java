@@ -20,7 +20,7 @@ import com.zdw.utils.NetUtils;
 import com.zdw.worker.entity.WorkerNode;
 import com.zdw.worker.mapper.WorkerNodeDao;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.math.RandomUtils;
+import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -72,7 +72,7 @@ public class DisposableWorkerIdAssigner implements WorkerIdAssigner {
         } else {
             workerNode.setType(WorkerNodeType.ACTUAL.value());
             workerNode.setHostName(NetUtils.getLocalAddress());
-            workerNode.setPort(System.currentTimeMillis() + "-" + RandomUtils.nextInt(100000));
+            workerNode.setPort(System.currentTimeMillis() + "-" + RandomUtils.nextInt(100,100000));
         }
         workerNode.setLaunchDate(LocalDate.now());
         workerNode.setModified(LocalDateTime.now());

@@ -27,6 +27,8 @@ public interface ProductDao extends JpaRepository<Product, Long> {
 
     Product findByProductId(long productId);
 
+    Product findById(long id);
+
 
 
 }

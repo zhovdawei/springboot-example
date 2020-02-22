@@ -86,13 +86,7 @@
                enableUpdateByExample="false">
             <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
         </table>
-        <table tableName="out_bound_order" domainObjectName="OutBoundOrder" mapperName="OutBoundOrderDao"
-               enableCountByExample="false"
-               enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false">
-            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
-        </table>
+
         <table tableName="payment_detail" domainObjectName="PaymentDetail" mapperName="PaymentDetailDao"
                enableCountByExample="false"
                enableDeleteByExample="false"
@@ -120,8 +114,8 @@
                enableSelectByExample="false"
                enableUpdateByExample="false">
             <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
-        </table>
-        <table tableName="vip_order" domainObjectName="VipOrder" mapperName="VipOrderDao"
+        </table>-->
+        <!--<table tableName="vip_order" domainObjectName="VipOrder" mapperName="VipOrderDao"
                enableCountByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
@@ -129,7 +123,15 @@
             <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
         </table>-->
 
-        <table tableName="worker_node" domainObjectName="WorkerNode" mapperName="WorkerNodeDao"
+        <!--<table tableName="worker_node" domainObjectName="WorkerNode" mapperName="WorkerNodeDao"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <generatedKey column="com.zdw.dto" sqlStatement="MySql"/>
+        </table>-->
+
+        <table tableName="out_bound_order" domainObjectName="OutBoundOrder" mapperName="OutBoundOrderDao"
                enableCountByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"

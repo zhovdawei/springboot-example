@@ -21,7 +21,7 @@ import com.zdw.exception.UidGenerateException;
 import com.zdw.utils.DateUtils;
 import com.zdw.worker.WorkerIdAssigner;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 
 import java.util.Date;

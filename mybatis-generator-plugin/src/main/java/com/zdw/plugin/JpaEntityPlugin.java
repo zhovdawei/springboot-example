@@ -1,14 +1,16 @@
 package com.zdw.plugin;
 
-import org.apache.commons.lang.StringUtils;
-import org.mybatis.generator.api.FullyQualifiedTable;
+import org.apache.commons.lang3.StringUtils;
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
 import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.java.*;
 import org.mybatis.generator.config.TableConfiguration;
 
-import java.util.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class JpaEntityPlugin extends PluginAdapter{
 

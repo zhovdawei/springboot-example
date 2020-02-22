@@ -13,7 +13,7 @@ import lombok.Data;
 /**
 *
 * @author MBG
-* @created Create Time: Sun Feb 02 03:31:08 CST 2020
+* @created Create Time: Thu Feb 06 15:01:20 CST 2020
 */
 @Data
 @Entity
@@ -42,9 +42,23 @@ public class OutBoundOrder {
     private Long outId;
 
     /**
-     * 出库时间
+     * 状态(0-创建出库单,1-准备货品中,2-已出库)
+     */
+    @Basic
+    @Column(name="status")
+    private Integer status;
+
+    /**
+     * 创建时间时间
      */
     @Basic
     @Column(name="create_time")
     private LocalDateTime createTime;
+
+    /**
+     * 更新时间
+     */
+    @Basic
+    @Column(name="update_time")
+    private LocalDateTime updateTime;
 }

@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 /**
 *
 * @author MBG
-* @created Create Time: Sun Feb 02 03:31:08 CST 2020
+* @created Create Time: Thu Feb 06 14:27:36 CST 2020
 */
 @Repository
 public interface VipOrderDao extends JpaRepository<VipOrder, Long> {
@@ -26,4 +26,5 @@ public interface VipOrderDao extends JpaRepository<VipOrder, Long> {
 
     @Transactional
     int deleteByOrderId(long orderId);
+
 }

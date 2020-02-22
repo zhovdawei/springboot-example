@@ -29,4 +29,6 @@ public interface UserDao extends JpaRepository<User, Long> {
     @Query("UPDATE User SET name = ?2 WHERE vipNo = ?1")
     int updateNameByVipNo(Long vipNo,String name);
 
+    User findById(long id);
+
 }

@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 /**
 *
 * @author MBG
-* @created Create Time: Sun Feb 02 03:31:08 CST 2020
+* @created Create Time: Thu Feb 06 15:01:20 CST 2020
 */
 @Repository
 public interface OutBoundOrderDao extends JpaRepository<OutBoundOrder, Long> {

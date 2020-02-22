@@ -1,7 +1,7 @@
 package com.zdw.test.generator;
 
 import com.zdw.test.util.RandomUtil;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -3654,7 +3654,6 @@ public class IdNoGenerator {
         String province = id.substring(0,2) + "0000";
         String area = id.substring(0,4)+"00";
         String city = id.substring(0,6);
-        System.out.println(city);
         return AREA_CODE.get(Integer.parseInt(province))+
                 AREA_CODE.get(Integer.parseInt(area))+
                 AREA_CODE.get(Integer.parseInt(city));

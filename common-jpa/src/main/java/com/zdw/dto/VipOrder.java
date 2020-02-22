@@ -14,7 +14,7 @@ import lombok.Data;
 /**
 *
 * @author MBG
-* @created Create Time: Sun Feb 02 03:31:08 CST 2020
+* @created Create Time: Thu Feb 06 14:27:36 CST 2020
 */
 @Data
 @Entity
@@ -50,11 +50,32 @@ public class VipOrder {
     private BigDecimal paySum;
 
     /**
-     * 订单状态(0-未支付,1-已支付,2-配货中,3-运输中,4-已送达,5-已收货,6-已取消,7-退款中,8-已退款)
+     * 订单状态(0-未支付,1-已支付,2-退款中,3-已退款,4-已取消)
      */
     @Basic
     @Column(name="status")
     private Integer status;
+
+    /**
+     * 收货人
+     */
+    @Basic
+    @Column(name="pick_user")
+    private String pickUser;
+
+    /**
+     * 收货人手机号
+     */
+    @Basic
+    @Column(name="pick_phone")
+    private String pickPhone;
+
+    /**
+     * 收货地址
+     */
+    @Basic
+    @Column(name="pick_address")
+    private String pickAddress;
 
     /**
      * 创建时间
