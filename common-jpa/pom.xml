@@ -49,6 +49,14 @@
             <artifactId>testng</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.zdw</groupId>
+            <artifactId>common-pojo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -66,7 +74,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <!-- 开启测试 false-不跳过，true-跳过-->
-                    <skipTests>false</skipTests>
+                    <skipTests>true</skipTests>
                     <!-- 忽略错误 -->
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>

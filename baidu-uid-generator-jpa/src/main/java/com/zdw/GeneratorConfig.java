@@ -18,6 +18,7 @@ public class GeneratorConfig {
         CachedUidGenerator cug = new CachedUidGenerator();
         cug.setWorkerIdAssigner(disposableWorkerIdAssigner());
         cug.setEpochStr("2020-01-01");
+
         return cug;
     }
 
